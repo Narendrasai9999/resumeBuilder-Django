@@ -1,0 +1,178 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="{{message.tags}}"
+    style="position: fixed;bottom: 10px; right: 20px;">
+    <strong>{{message}}</strong>
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="input-section" style="margin-top: 120px;">
+        <h2 class="input-heading">Personal Details</h2>
+        <div class="form-group">
+            <label class="fs-4 my-2">Full Name</label>
+            <input name="fullname" required type="text" class="form-control" placeholder="Enter Full Name" value="{{data.fullname}}">
+        </div>
+
+
+        <div class="form-row" style="display: flex; justify-content: space-between;">
+            <div class="form-group w-45">
+                <label class="fs-4 my-2">Email Id</label>
+                <input name="email" required type="email" class="form-control" placeholder="Enter Email Id" value="{{data.email}}">
+            </div>
+            <div class="form-group w-45">
+                <label class="fs-4 my-2">DOB</label>
+                <input  name="dob" required type="text" class="form-control" placeholder="October 19, 2001" value="{{data.dob}}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="fs-4 my-2">Home Address or College Address</label>
+            <textarea name="adress" required rows="5" class="form-control"
+                placeholder="Eg. DAIICT, Gandhinagar">{{data.adress}}</textarea>
+        </div>
+
+    </div>
+
+    <div class="input-section" style="margin-top:50px;">
+        <h2 class="input-heading">Education Details</h2>
+        <div class="form-group">
+            <label class="fs-4 my-2">College or Institute Name</label>
+            <input name="clgname" required type="text" class="form-control" placeholder="Enter Your college name" value="{{data.clgname}}">
+        </div>
+
+
+        <div class="form-row" style="display: flex; justify-content: space-between;">
+            <div class="form-group w-45">
+                <label class="fs-4 my-2">Year Of Graduation</label>
+                <input name="clgyear" required type="number" class="form-control" placeholder="Enter Year of Graduation" value="{{data.clgyear}}">
+            </div>
+            <div class="form-group w-45">
+                <label class="fs-4 my-2">CPI/Aggregate</label>
+                <input name="clgcpi" required type="text" class="form-control"  placeholder="Enter Your Aggregate CPI" value="{{data.clgcpi}}">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label class="fs-4 my-2">Higher Secondary | Class XII  Institute Name</label>
+            <input name="cls12name" required type="text" class="form-control" placeholder="Enter Your Class XII Institute name" value="{{data.cls12name}}">
+        </div>
+
+
+        <div class="form-row" style="display: flex; justify-content: space-between;">
+            <div class="form-group w-45">
+                <label class="fs-4 my-2">Year Of Completion</label>
+                <input name="cls12year" required type="number" class="form-control" placeholder="Enter Year of Completion of Class XII" value="{{data.cls12year}}">
+            </div>
+            <div class="form-group w-45">
+                <label class="fs-4 my-2">CPI/Aggregate</label>
+                <input name="cls12cpi" required type="text" class="form-control"  placeholder="Enter Your Aggregate CPI of Class XII" value="{{data.cls12cpi}}">
+            </div>
+        </div>
+        <br>
+        
+        <div class="form-group">
+            <label class="fs-4 my-2">Secondary | Class X  Institute Name</label>
+            <input name="cls10name" required type="text" class="form-control" placeholder="Enter Your Class X Institute name" value="{{data.cls10name}}">
+        </div>
+
+
+        <div class="form-row" style="display: flex; justify-content: space-between;">
+            <div class="form-group w-45">
+                <label class="fs-4 my-2">Year Of Completion</label>
+                <input name="cls10year" required type="number" class="form-control" placeholder="Enter Year of Completion of Class X" value="{{data.cls10year}}">
+            </div>
+            <div class="form-group w-45">
+                <label class="fs-4 my-2">CPI/Aggregate</label>
+                <input name="cls10cpi" required type="text" class="form-control"  placeholder="Enter Your Aggregate CPI of Class X" value="{{data.cls10cpi}}">
+            </div>
+        </div>
+    </div>
+
+    <div class="input-section" style="margin-top:50px;">
+        <h2 class="input-heading">Skills</h2>
+        <div class="form-group">
+            <label class="fs-4 my-2">Expertise Area/Area(s) of Interest</label>
+            <input name="intrest" required type="text" class="form-control"
+                placeholder="Eg. Data Structures and Algorithms etc..." value="{{data.intrest}}">
+        </div>
+
+        <div class="form-group">
+            <label class="fs-4 my-2">Programming Language(s)</label>
+            <input name="planguages" required type="text" class="form-control" placeholder="C, C++, JavaScript etc..." value="{{data.planguages}}">
+        </div>
+
+        <div class="form-group">
+            <label class="fs-4 my-2">Tools and Technologies</label>
+            <input name="toolsandtech" required type="text" class="form-control"
+                placeholder="Android Studio, VS Code etc..." value="{{data.toolsandtech}}">
+        </div>
+
+    </div>
+
+    <div class="input-section" style="margin-top:50px;">
+        <h2 class="input-heading">Projects</h2>
+
+        <div class="form-row" style="display: flex; justify-content: space-between;">
+            <div class="form-group w-45">
+                <label class="fs-4 my-2">Project Name</label>
+                <input name="projectname" required type="text" class="form-control" placeholder="Enter Project Name" value="{{data.projectname}}">
+            </div>
+            <div class="form-group w-45">
+                <label class="fs-4 my-2">Guide</label>
+                <input name="projectguide" required type="text" class="form-control" placeholder="Mr/Prof. xyz" value="{{data.projectguide}}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="fs-4 my-2">Project Description</label>
+            <textarea name="projectdesc" required rows="5" class="form-control"
+                placeholder="Description of the project">{{data.projectdesc}}</textarea>
+        </div>
+
+    </div>
+
+    <div class="input-section" style="margin:50px auto;">
+        <h2 class="input-heading">INTERESTS AND HOBBIES</h2>
+
+        <div class="form-row" style="display: flex; justify-content: space-between;">
+            <div class="form-group w-45">
+                <label class="fs-4 my-2">Hobby 1</label>
+                <input name="hobby1" required type="text" class="form-control" placeholder="Enter Hobby1" value="{{data.hobby1}}">
+            </div>
+            <div class="form-group w-45">
+                <label class="fs-4 my-2">Hobby 2</label>
+                <input name="hobby2" required type="text" class="form-control" placeholder="Enter Hobby2" value="{{data.hobby2}}">
+            </div>
+        </div>
+
+        <div class="form-row" style="display: flex; justify-content: space-between;">
+            <div class="form-group w-45">
+                <label class="fs-4 my-2">Hobby 3</label>
+                <input name="hobby3" required type="text" class="form-control" placeholder="Enter Hobby3" value="{{data.hobby3}}">
+            </div>
+            <div class="form-group w-45">
+                <label class="fs-4 my-2">Hobby 4</label>
+                <input name="hobby4" required type="text" class="form-control" placeholder="Enter Hobby4" value="{{data.hobby4}}">
+            </div>
+        </div>
+
+    </div>
+
+    <input type="submit" class="btns btn w-80 my-4 mb-5" style="background-color:#333399; color: white;" value="Save">
+    
+</form>
+
+
+
+{% endblock content %}

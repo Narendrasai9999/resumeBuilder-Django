@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+:root {
+  --bgcolor: rgb(30, 30, 30);
+  --fontcolor: #f7f7f7;
+  --clr: #1857a4;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #6190e8;
+  background: -webkit-linear-gradient(to right, #a7bfe8, #6190e8);
+  background: linear-gradient(to right, #a7bfe8, #6190e8);
+}
+
+/* Scrollbar css */
+::-webkit-scrollbar {
+  display: none;
+}
+/* End of scrollbar css */
+
+/* Navbar css */
+
+.nav-div {
+  position: fixed;
+  top: 15px;
+  width: 100%;
+  z-index: 2;
+}
+
+.topnav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bgcolor);
+  width: 80%;
+  height: 73px;
+  margin: auto;
+  box-shadow: 0 0 10px var(--bgcolor);
+  transition: 0.5s;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+.nav-link-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-title {
+  background-color: #eb592a;
+  background-color: var(--clr);
+  font-size: 22px;
+  padding: 20px 25px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.nav-link {
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 22px 25px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.nav-link:hover {
+  background-color: var(--clr) !important;
+  padding: 22px 25px;
+  color: #f2f2f2;
+}
+.active {
+  background-color: var(--clr);
+}
+/* End of Navbar css */
+
+/* Login Signup css */
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  overflow: scroll;
+  margin-top: 85px;
+}
+.square-div {
+  background-color: rgb(30, 30, 30);
+  box-shadow: 0 0 10px var(--bgcolor);
+  color: var(--fontcolor);
+  width: 500px;
+  height: 550px;
+  overflow: auto;
+}
+.square-div:nth-child(1) {
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.square-div:nth-child(2) {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.side-image {
+  width: 100%;
+  height: 100%;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.form-div form {
+  width: 100%;
+}
+.form-div input {
+  width: 100%;
+  font-size: 17px;
+  font-weight: bold;
+}
+i {
+  margin-right: 10px;
+}
+
+/* End of the Login Signup css */
+
+/* Home page css */
+
+.home-div {
+  width: 100%;
+  height: 550px;
+  margin: auto;
+  margin-top: 120px;
+  border-radius: 8px;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Left div */
+.left-div {
+  width: 48%;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.home-title {
+  margin-bottom: 60px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.home-desc {
+  font-size: 22px;
+}
+/* End of Left div */
+
+/* Right div */
+.right-div {
+  width: 40%;
+}
+.home-page-image {
+  width: 500px;
+}
+.cv-btn {
+  padding: 22px 25px;
+  text-decoration: none;
+  color: white;
+  background-color: var(--clr);
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+.cv-btn:hover {
+  background-color: var(--bgcolor);
+  color: white;
+}
+/* End of Right div */
+
+/* End of Home page css */
+
+/* Buttons */
+.btns {
+  padding-right: 30px;
+  padding-left: 30px;
+  font-size: 24px !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: block;
+  margin: auto;
+}
+
+.btns-primary {
+  display: block;
+  margin: 0;
+}
+
+#download{
+  margin-top: 120px;
+}
+/* End of Buttons */
+
+/* Resume preview Page */
+
+.resume-page {
+  width: 792px;
+  max-width: 1200px;
+  margin: auto;
+  background-color: white;
+  color: var(--bgcolor);
+  box-shadow: 0 0 20px var(--bgcolor);
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+.my-side-line {
+  border-left: 4px solid rgb(14, 2, 80);
+  padding-left: 20px;
+  border-collapse: separate;
+}
+table tr td {
+  vertical-align: text-top;
+  padding: -50px;
+  padding: 0px 3px;
+  font-size: 1.1rem;
+}
+#logo{
+  padding-right: 10px;
+  padding-top: 10px;
+}
+.w-20 {
+  width: 20%;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-30 {
+  width: 30%;
+}
+.w-35{
+  width: 35%;
+}
+.w-40 {
+  width: 40%;
+}
+
+.w-45 {
+  width: 45%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.heading-title{
+  font-size: 13pt;
+}
+/* End of the Resume preview Page */
+
+
+/* Dashboard css  */
+
+.input-heading{
+  color: #333399;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.input-section{
+  width: 80%;
+  margin: auto;
+  color: var(--bgcolor);
+}
+input, textarea{
+  font-size: 14pt !important;
+  font-weight: 500 !important;
+  letter-spacing: 1px !important;
+}
+input::placeholder, textarea::placeholder{
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 14pt;
+  color: black;
+}
+label{
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+/* End of dashboard css */

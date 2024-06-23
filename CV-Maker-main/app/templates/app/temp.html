@@ -1,0 +1,298 @@
+
+    <hr style="border-bottom:1px solid black">
+
+    <table id="education-table" class="w-100 section my-side-line">
+        <thead>
+
+            <tr>
+                <td colspan="4" class="section-header">
+                    <h3>EDUCATION</h3>
+                </td>
+            </tr>
+            <tr class="text-center">
+                <th colspan="1" class="text-left">Degree</th>
+                <th colspan="1">University/Institute</th>
+                <th colspan="1">Year</th>
+                <th colspan="1">CPI/Aggregate</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td id="degree" contenteditable="true"  class="input-field" >
+                    <b>B.Tech | ICT</b>
+                </td>
+                <td id="university-name" contenteditable="true"  class="input-field"
+                   >Dhirubhai Ambani Institute of
+                    Information and
+                    Communication Technology</td>
+                <td id="grad-year" contenteditable="true"  class="input-field" >
+                    Year of completion</td>
+                <td id="cpi" class="text-center input-field" contenteditable="true" 
+                    >xx.xx</td>
+            </tr>
+            <tr>
+                <td id="class12" contenteditable="true"  class="input-field" >
+                    <b>Higher Secondary | Class XII</b>
+                </td>
+                <td id="class12-school" contenteditable="true"  class="input-field"
+                   >
+                    Name of the Highschool (Education
+                    Board)
+                </td>
+                <td id="class12-pass-year" contenteditable="true"  class="input-field"
+                    >Year of completion</td>
+                <td id="class12-percentage" class="text-center input-field" contenteditable="true" 
+                   >xx%</td>
+            </tr>
+            <tr>
+                <td id="class10" contenteditable="true"  class="input-field">
+                    <b>Secondary | Class X</b>
+                </td>
+                <td id="class10-school" contenteditable="true"  class="input-field"
+                >
+                    Name of the Highschool (Education
+                    Board)
+                </td>
+                <td id="class10-pass-year" contenteditable="true"  class="input-field"
+                >Year of completion</td>
+                <td id="class10-percentage" class="text-center input-field" contenteditable="true" 
+                >xx%</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="4" class="text-right">
+                    
+                    <button id="add-education" class="addButton" onclick="addEducation()">Add</button>
+                    <button id="remove-education" class="removeButton" onclick="removeRow('education-table')">Remove
+                        Last</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <table id="skills-table" class="w-100 section my-side-line">
+        <thead>
+
+            <tr>
+                <td colspan="2" class="section-header">
+                    <h3>SKILLS</h3>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td class="w-30"><b>Expertise Area/Area(s) of Interest</b></td>
+                <td id="expertise" class="w-70 input-field" contenteditable="true" 
+                >Data Structures and
+                    Algorithms etc..</td>
+            </tr>
+            <tr>
+                <td class="w-30"><b>Programming Language(s)</b></td>
+                <td id="prog-languages" class="w-70 input-field" contenteditable="true" 
+                >C, C++, JavaScript
+                    etc..
+                </td>
+            </tr>
+            <tr>
+                <td class="w-30"><b>Tools and Technologies</b></td>
+                <td id="tools" class="w-70 input-field" contenteditable="true" >
+                    Android Studio, React etc..</td>
+            </tr>
+        </tbody>
+
+        
+        <!---->
+    </table>
+
+    <hr>
+
+    <table id="internships-table" class="w-100 section my-side-line">
+        <thead>
+            <tr>
+                <td colspan="3" class="section-header">
+                    <h3>PROFESSIONAL EXPERIENCE/INTERNSHIPS</h3>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td valign="top" class="w-20 input-field" contenteditable="true" 
+                >
+                    <b>Name of Organization (Rural/Industrial)</b>
+                </td>
+                <td valign="top" class="w-60">
+                    <p contenteditable="true"  class="input-field">
+                        Describe here. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit.
+                        Quisque
+                        pulvinar
+                        nibh
+                        in
+                        scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit
+                        amet.
+                    </p>
+                    <p><i>Guide:
+                            <span contenteditable="true"  class="input-field head-field"
+                            >Mr/Prof. xyz</span>
+                        </i></p>
+                </td>
+                <td valign="top" class="w-20 text-right">
+                    <p class="input-field" contenteditable="true" >Eg. Dec 2017 -
+                        Jan 2018</p>
+                    <p>Team Size - <span class="input-field team-field" contenteditable="true" 
+                        >xx</span></p>
+
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">
+                    <button id="add-internship" class="addButton" >Add</button>
+                    <button id="remove-internship" class="removeButton" >Remove
+                        Last</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr>
+    
+
+    <div id="resume-page-2" class="row">
+        <div class="col-md-12">
+            <table id="projects-table" class="w-100 section my-side-line">
+                <thead>
+                    <tr>
+                        <td colspan="2" class="section-header">
+                            <h3>PROJECTS</h3>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td valign="top" class="w-20">
+                            <p contenteditable="true"  class="input-field"><b>Name of
+                                the
+                                Project</b></p>
+                                <p><i>Guide:
+                                    <span contenteditable="true"  class="input-field head-field"
+                                    >Mr/Prof.
+                                    xyz</span>
+                                </i>
+                            </p>
+                        </td>
+                        <td valign="top" class="w-60 input-field" contenteditable="true" 
+                        >
+                            <p>
+                                Describe here. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit.
+                                Quisque
+                                pulvinar
+                                nibh
+                                in
+                                scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit
+                                amet.
+                            </p>
+                        </td>
+                        <td valign="top" class="w-20 text-right ">
+                            <p class="input-field" contenteditable="true" >Eg: June
+                                2017 - Feb 2018</p>
+                                <p>Team Size - <span class="input-field team-field" contenteditable="true" 
+                                    >xx</span></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                        
+                        <tfoot>
+                            <tr>
+                                <td colspan="2" class="text-right">
+                                    <button id="add-project" class="btn btn-primary addButton" >Add</button>
+                                    <button id="remove-project" class="removeButton" >Remove
+                                        Last</button>
+                                    </td>
+                                </tr>
+                </tfoot>
+            </table>
+            
+            <hr>
+            
+            
+            <table class="w-100 my-side-line">
+                <tbody>
+                    <tr style="display:flex; justify-content: space-between">
+                        <td class="w-50">
+                            <table class="w-100 section">
+                                <tr>
+                                    <td colspan="2" class="section-header">
+                                        <h3>POSITIONS OF RESPONSIBILITY</h3>
+                                        <ul id="positions-list" class="list">
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <button class="addButton small-btn"
+                                        >Add</button>
+                                        <button class="removeButton small-btn" >Remove
+                                            Last</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="w-45">
+                                <table class="w-100 section">
+                                    <tr>
+                                        <td colspan="2" class="section-header">
+                                            <h3>INTERESTS AND HOBBIES</h3>
+                                            <ul id="hobbies-list">
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button class="addButton small-btn" >Add</button>
+                                            <button class="removeButton small-btn" >Remove
+                                                Last</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    <button id="ach-btn" class="addButton invisible"
+                                    >Achievements</button>
+                                    <table class="w-100 section" id="awards-table">
+                                        <tr>
+                                            <td colspan="2" class="section-header">
+                                                <h3>AWARDS AND ACHIEVEMENTS
+                                                    <button id="remove-awards" class="removeButton"
+                                                    >Delete</button>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" id="awards-list" contenteditable="true" 
+                                            class="input-field">
+                                            Stood first in xyz competition.
+                                            <br>
+                                            Your highest rating in compititive sites.
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+            <hr>
+        </div>
+    </div>

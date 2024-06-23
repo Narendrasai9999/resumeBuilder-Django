@@ -1,0 +1,271 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="{{message.tags}}"
+    style="position: fixed;bottom: 10px; right: 20px;">
+    <strong>{{message}}</strong>
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+
+<button class="btns btn btn-dark" id="download" onclick="PrintDiv()">Download PDF File</button>
+
+<div class="resume-page">
+    <div id="resume" >
+
+        <!-- Section1 -->
+
+        <table class="my-side-line w-100">
+            <tr style="display:flex; flex-direction: row; justify-content:space-between;">
+                <td id="logo"><img style="width: 150px;" src="{% static srmaplogo.jpg  %}"></td>
+                <td class="w-75">
+                    <h2 class="w-100 fw-bold">{{data.fullname}}</h2>
+                    <h3 class="my-3 mb-3 fw-bold heading-title">SRMAP UNIVERSITY
+                    </h3>
+                    <p class="w-100 d-inline-flex justify-content-between">
+                        <span class="w-50 inline-block fw-bold">Email:
+                            <span class="fw-normal">{{data.email}}</span>
+                        </span>
+                        <span class="w-50 inline-block text-end fw-bold">DOB:
+                            <span class="fw-normal">{{data.dob}}</span>
+                        </span>
+                    </p>
+                    <p class="w-100 fw-bold">
+                        Address:
+                        <span class="fw-normal" style="width: 87%;">{{data.adress}}</span>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        
+        <hr class="my-3" style="border-bottom:2px solid black">
+
+
+        <!-- Section2 -->
+
+        <table class="my-side-line w-100">
+            <thead>
+
+                <tr>
+                    <td colspan="4" class="section-header">
+                        <h3 class="fw-bold">EDUCATION</h3>
+                    </td>
+                </tr>
+                <tr class="text-center w-100">
+                    <th colspan="1" class="text-start w-35 heading-title">Degree</th>
+                    <th colspan="1" class="text-start w-35 heading-title">University/Institute</th>
+                    <th colspan="1" class="text-start w-15 heading-title">Year</th>
+                    <th colspan="1" class="text-center w-15 heading-title">CPI/Aggregate</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>
+                        <div class="fw-bold align-top heading-title">B.Tech | ICT</div>
+                    </td>
+                    <td>
+                        <div>{{data.clgname}}</div>
+                    </td>
+                    <td>
+                        <div>{{data.clgyear}}</div>
+                    </td>
+                    <td>
+                        <div class="text-center">{{data.clgcpi}}</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="fw-bold align-top heading-title">Higher Secondary | Class XII</div>
+                    </td>
+                    <td>
+                        <div>{{data.cls12name}}</div>
+                    </td>
+                    <td>
+                        <div>{{data.cls12year}}</div>
+                    </td>
+                    <td>
+                        <div class="text-center">{{data.cls12cpi}}</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="fw-bold heading-title">Secondary | Class X</div>
+                    </td>
+                    <td>
+                        <div>{{data.cls10name}}</div>
+                    </td>
+                    <td>
+                        <div>{{data.cls10year}}</div>
+                    </td>
+                    <td>
+                        <div class="text-center">{{data.cls10cpi}}</div>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <hr class="my-3" style="border-bottom:2px solid black">
+
+
+        <!-- Section3 -->
+
+        <table class="w-100 my-side-line">
+            <thead>
+                <tr>
+                    <td colspan="2" class="section-header">
+                        <h3 class="fw-bold">SKILLS</h3>
+                    </td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="w-35 fw-bold heading-title">Expertise Area/Area(s) of Interest</td>
+                    <td>
+                        <div class="w-100">{{data.intrest}}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fw-bold  heading-title">Programming Language(s)</td>
+                    <td>
+                        <div class="w-100">{{data.planguages}}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Tools and Technologies</b></td>
+                    <td>
+                        <div class="w-100">{{data.toolsandtech}}</div>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <hr class="my-3" style="border-bottom:2px solid black">
+
+
+        <!-- Section4 -->
+
+
+        <!-- <table class="w-100 my-side-line">
+            <thead>
+                <tr>
+                    <td colspan="2" class="section-header">
+                        <h4 class="fw-bold">PROFESSIONAL EXPERIENCE/INTERNSHIPS</h4>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="w-100">
+                    <td valign="top">
+                        <p>
+                        <div class="fw-bold heading-title">Name of Organization (Rural/Industrial)</div>
+                        </p>
+                    </td>
+                    <td valign="top" class="w-75">
+                        <p>
+                        <div>Describe here. Lorem ipsum dolor sit, amet consectetur
+                            adipisicing elit. Dignissimos cupiditate, voluptatibus id similique ut architecto iste</div>
+                        </p>
+                        <p class="fw-bold">Guide:
+                            <span class="fw-bold">Mr/Prof. xyz</span>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr class="my-4" style="border-bottom:2px solid black"> -->
+
+
+        <!-- Section5 -->
+
+        <table class="w-100 my-side-line">
+            <thead>
+                <tr>
+                    <td colspan="2" class="section-header">
+                        <h3 class="fw-bold">PROJECTS</h3>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="w-25">
+                        <p>
+                        <div class="fw-bold">{{data.projectname}}</div>
+                        </p>
+                        <p class="fw-bold">Guide:
+                            <span class="fw-normal">{{data.projectguide}}</span>
+                        </p>
+                    </td>
+                    <td class="w-75">
+                        <p>
+                        <div>{{data.projectdesc}}</div>
+                        </p>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <hr class="my-3" style="border-bottom:2px solid black">
+
+
+        <!-- Section6 -->
+
+        <table class="w-100 my-side-line">
+            <tbody>
+                <tr style="display:flex; justify-content: space-between">
+
+                    <!-- <td class="w-50">
+                        <table class="w-100 section">
+                            <tr>
+                                <td colspan="2" class="section-header">
+                                    <h3 class="fw-bold">POSITIONS OF RESPONSIBILITY</h3>
+                                    <ul id="positions-list" class="list">
+                                        <li>IFest event coordinator</li>
+                                        <li>Synapse Website coordinator</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </td> -->
+
+                    <td class="w-100">
+                        <table class="w-100 section">
+                            <tr>
+                                <td colspan="2" class="section-header">
+                                    <h3 class="fw-bold">INTERESTS AND HOBBIES</h3>
+                                    <ul id="hobbies-list">
+                                        <li>{{data.hobby1}}</li>
+                                        <li>{{data.hobby2}}</li>
+                                        <li>{{data.hobby3}}</li>
+                                        <li>{{data.hobby4}}</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <hr class="my-3" style="border-bottom:2px solid black">
+
+    </div>
+</div>
+
+
+{% endblock content %}

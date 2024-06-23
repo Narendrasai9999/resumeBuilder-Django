@@ -1,0 +1,46 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="main-container">
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="{{message.tags}}"
+        style="position: fixed;bottom: 10px; right: 20px;">
+        <strong>{{message}}</strong>
+        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    
+    <div class="square-div">
+        <img class="side-image" src="{% static 'side-image.jpg' %}" alt="">
+    </div>
+    <div class="square-div p-5 py-4 my-5 form-div">
+        <h1 class="mb-2 mt-3"><i class="fas fa-user-circle"></i>SIGN UP</h1>
+        <form action="" method="POST" novalidate>
+            {% csrf_token %}
+            {% for fm in form %}
+            <div class="form-group mb-3 mt-2">
+                {{fm.label_tag}} {{fm}} <small class="text-warning fs-6"
+                    style="letter-spacing: 1px;">{{fm.errors|striptags}}</small>
+            </div>
+            {% endfor %}
+
+            {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+            <p class="alert alert-danger my-3">{{error}}</p>
+            {% endfor %}
+            {% endif %}
+
+            <input class="btns btn btn-outline-light mt-4" type="submit" value="Sign Up">
+        </form>
+
+    </div>
+        
+
+</div>
+
+{% endblock content %}
