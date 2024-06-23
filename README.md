@@ -1,4 +1,4 @@
 # resumeBuilder-Django
 resume-builder  using python
-db browser
+data Base -db browser
 
